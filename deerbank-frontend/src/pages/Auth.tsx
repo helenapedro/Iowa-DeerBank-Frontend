@@ -1,4 +1,5 @@
 import React, { useState, type FormEvent } from "react";
+import { Building2 } from 'lucide-react';
 
 type AuthMode = "login" | "register";
 
@@ -63,7 +64,7 @@ export function Auth() {
           <div className="auth-page">
                <div className="auth-card">
                <div className="auth-icon">
-                    <span>🏦</span>
+                    <Building2 className="h-6 w-6 text-primary" />
                </div>
 
                <h1 className="auth-title">Welcome to DeerBank</h1>
