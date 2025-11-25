@@ -117,7 +117,7 @@ export function Auth() {
                               />
                          </label>
 
-                         {/* Confirm password – só no modo register */}
+                         {/* Confirm password – only in register mode */}
                          {!isLogin && (
                               <label className="auth-label">
                                    Confirm Password
