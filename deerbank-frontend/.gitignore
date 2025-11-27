@@ -28,4 +28,5 @@ tsconfig.node.json
 tsconfig.app.json
 vite.config.ts
 eslint.config.js
+dist
 

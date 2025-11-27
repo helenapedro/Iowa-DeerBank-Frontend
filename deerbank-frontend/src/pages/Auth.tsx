@@ -1,5 +1,9 @@
 import React, { useState, type FormEvent } from "react";
 import { Building2 } from 'lucide-react';
+import { useDispatch, useSelector } from "react-redux";
+import type { RootState, AppDispatch } from "../store/store";
+import { loginSuccess, logout } from "../store/slices/authSlice";
+
 
 type AuthMode = "login" | "register";
 
@@ -15,6 +19,16 @@ type RegisterForm = {
 };
 
 export function Auth() {
+     const dispatch = useDispatch<AppDispatch>();
+     
+     const isAuthenticated = useSelector(
+          (state: RootState) => state.auth.isAuthenticated
+     );
+
+     // const userEmail = useSelector(
+     //      (state: RootState) => state.auth.userEmail
+     // );
+
      const [mode, setMode] = useState<AuthMode>("login");
 
      const [loginForm, setLoginForm] = useState<LoginForm>({
@@ -48,6 +62,7 @@ export function Auth() {
           if (mode === "login") {
                // TODO call the backend or Redux
                console.log("Login:", loginForm);
+               dispatch(loginSuccess(loginForm.email));
           } else {
                // TODO validation 
                if (registerForm.password !== registerForm.confirmPassword) {
@@ -55,6 +70,7 @@ export function Auth() {
                     return;
                }
                console.log("Register:", registerForm);
+               dispatch(loginSuccess(registerForm.email));
           }
      }
 
@@ -136,6 +152,13 @@ export function Auth() {
                          <button className="auth-button" type="submit">
                               {isLogin ? "Sign In" : "Create Account"}
                          </button>
+
+                         {isAuthenticated && (
+                              <button onClick={() => dispatch(logout())}>
+                                   Logout
+                              </button>
+                         )}
+
                     </form>
                </div>
           </div>
