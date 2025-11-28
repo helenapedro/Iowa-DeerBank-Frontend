@@ -171,3 +171,60 @@ body,
   transform: translateY(1px);
   box-shadow: 0 6px 14px rgba(37, 99, 235, 0.3);
 }
+
+/*Dashboard*/
+.dashboard-page {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+.dashboard-header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.dashboard-header p {
+  margin: 4px 0 24px;
+  color: #6b7280;
+}
+
+.dashboard-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 1.5fr;
+  gap: 24px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 20px 22px;
+  box-shadow: 0 16px 30px rgba(15, 23, 42, 0.06);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+.dashboard-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.accounts-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.accounts-table th,
+.accounts-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+}
+
+.accounts-table th {
+  font-weight: 500;
+  color: #6b7280;
+}
